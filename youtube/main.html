@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="height: 200vh">
+      <div class="container"></div>
+      Scroll down to trigger the event
+    </div>
+    <script>
+      
+      // Function to be triggered on scroll
+      function onScroll() {
+        console.log('The page is being scrolled')
+      }
+
+      // Add event listener for scroll event
+      window.addEventListener('scroll', onScroll)
+    </script>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar content content"
+                "footer footer footer"
+                ; 
+                grid-template-rows: auto 1fr auto;
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: 10px;
+                height: 100vh;
+        }
+        .item {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        .header {
+            grid-area: header;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            /* border: solid red; */
+            background-color: lightblue;
+            padding: 20px;
+        }
+        .content {
+            grid-area: content;
+            /* border: solid green; */
+            background-color: lightgreen;
+            padding: 20px;
+        }
+        .footer {
+            grid-area: footer;
+            /* border: solid blue; */
+            background-color: lightcoral;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    'sidebar'
+                    "content"
+                    "footer";grid-template-columns: 1fr;
+                    grid-template-rows: auto  auto 1fr auto;
+                    
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header item">header</header>
+        <aside class="sidebar item">sidebar</aside>
+        <main class="content item">content</main>
+        <footer class="footer item">footer</footer>
+    </div>
+</body>
+</html>
